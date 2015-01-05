@@ -1,0 +1,10 @@
+{
+    "require": {
+        "microsoft/application-insights": ">=0.1.0"
+    },
+     "autoload": {
+        "psr-4": {
+            "ApplicationInsights\\WordPress\\": "src/"
+        }
+    }
+}
