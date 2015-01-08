@@ -1,8 +1,9 @@
 {
     "require": {
+	    "php": ">=5.4.2",
         "microsoft/application-insights": ">=0.1.0"
     },
-     "autoload": {
+    "autoload": {
         "psr-4": {
             "ApplicationInsights\\WordPress\\": "src/"
         }
