@@ -14,6 +14,8 @@ class Server_Instrumentation
         $this->_telemetryClient = new \ApplicationInsights\Telemetry_Client();
         $this->_telemetryClient->getContext()->setInstrumentationKey($application_insights_options["instrumentation_key"]);
         $this->_telemetryClient->trackEvent('ApplicationInsights_PluginLoaded');
+        
+        set_exception_handler([$this, 'exceptionHandler']);
     }
     
     function endRequest()
@@ -40,6 +42,16 @@ class Server_Instrumentation
         else
         {
             return 'Home';
+        }
+    }
+    
+    
+    function exceptionHandler(\Exception $exception)
+    {
+        if ($exception != NULL)
+        {
+            $this->_telemetryClient->trackException($exception);
+            $this->_telemetryClient->flush();
         }
     }
 }
