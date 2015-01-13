@@ -10,7 +10,6 @@ composer.lock
 *.suo
 *.user
 *.sln.docstates
-deploy.cmd
 
 # Build results
 
