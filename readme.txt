@@ -20,6 +20,9 @@ Integrates a WordPress site with Microsoft Application Insights.
 
 == Changelog ==
 
+= 2.1 =
+* Minor bug fixes.
+
 = 2.0 =
 * Expanded to integrate the full Application Insights PHP SDK.
 
