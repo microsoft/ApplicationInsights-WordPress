@@ -1,7 +1,7 @@
 {
     "require": {
         "php": ">=5.4.2",
-        "microsoft/application-insights": ">=0.2.2"
+        "microsoft/application-insights": ">=0.2.4"
     },
     "replace": { 
         "guzzlehttp/guzzle": "~5.0" 

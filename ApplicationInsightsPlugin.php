@@ -2,7 +2,7 @@
 /*
 Plugin Name: Application Insights
 Description: Integrates a WordPress site with Microsoft Application Insights.
-Version: 2.0
+Version: 2.1
 Author: ApplicationInsights
 License:  MIT
  */
@@ -19,4 +19,3 @@ add_action('wp_head', array($clientInstrumentation, 'addPrefix'));
 // Enables server-side instrumentation
 $serverInstrumentation = new ApplicationInsights\WordPress\Server_Instrumentation();
 add_action('shutdown', array($serverInstrumentation, 'endRequest'));
-        
