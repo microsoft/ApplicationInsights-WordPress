@@ -15,7 +15,7 @@ class Server_Instrumentation
         $this->_telemetryClient->getContext()->setInstrumentationKey($application_insights_options["instrumentation_key"]);
         $this->_telemetryClient->trackEvent('ApplicationInsights_PluginLoaded');
         
-        set_exception_handler([$this, 'exceptionHandler']);
+        set_exception_handler(array($this, 'exceptionHandler'));
     }
     
     function endRequest()
