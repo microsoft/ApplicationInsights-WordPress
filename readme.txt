@@ -2,7 +2,7 @@
 Contributors: ApplicationInsights
 Tags: Application Insights
 Requires at least: 3.0.1
-Tested up to: 4.1
+Tested up to: 4.3
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
