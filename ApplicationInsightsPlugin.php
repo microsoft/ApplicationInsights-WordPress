@@ -2,7 +2,7 @@
 /*
 Plugin Name: Application Insights
 Description: Integrates a WordPress site with Microsoft Application Insights.
-Version: 2.1
+Version: 2.2
 Author: ApplicationInsights
 License:  MIT
  */

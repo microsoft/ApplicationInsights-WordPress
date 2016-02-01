@@ -23,6 +23,8 @@ Other SDKs and documentation can be found <a href='https://github.com/Microsoft/
 3. Go to Settings -> Application Insights and enter you Instrumentation Key you received from http://portal.azure.com
 
 == Changelog ==
+= 2.2 =
+* Updating the latest PHP SDK
 
 = 2.1 =
 * Removing unnecessary custom event from being logged. 
