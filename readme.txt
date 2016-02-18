@@ -2,7 +2,7 @@
 Contributors: ApplicationInsights
 Tags: Application Insights
 Requires at least: 3.0.1
-Tested up to: 4.3
+Tested up to: 4.4.2
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -23,6 +23,9 @@ Other SDKs and documentation can be found <a href='https://github.com/Microsoft/
 3. Go to Settings -> Application Insights and enter you Instrumentation Key you received from http://portal.azure.com
 
 == Changelog ==
+= 2.3 =
+* Added support for Wordpress Multisite Network *
+
 = 2.2 =
 * Updating the latest PHP SDK
 
