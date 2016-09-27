@@ -1,11 +1,9 @@
 {
     "require": {
         "php": ">=5.4.2",
-        "microsoft/application-insights": ">=0.2.4"
+        "microsoft/application-insights": ">=0.3.3"
     },
-    "replace": { 
-        "guzzlehttp/guzzle": "~5.0" 
-    },
+
     "autoload": {
         "psr-4": {
             "ApplicationInsights\\WordPress\\": "src/"

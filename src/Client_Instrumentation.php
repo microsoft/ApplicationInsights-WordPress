@@ -13,29 +13,22 @@ class Client_Instrumentation
             }({
                 instrumentationKey:"INSTRUMENTATION_KEY"
             });
-    
+
             window.appInsights=appInsights;
             appInsights.trackPageView("PAGE_NAME", PAGE_URL);
         </script>';
-       
+
         $patterns = array();
         $replacements = array();
-       
+
         /* Instrumentation Key */
         $patterns[0] = '/INSTRUMENTATION_KEY/';
         $application_insights_options = get_option("applicationinsights_options");
         $replacements[0] = $application_insights_options["instrumentation_key"];
-       
+
         $patterns[1] = '/PAGE_NAME/';
-        if (is_home() == false)
-        {
-            $replacements[1] = get_the_title();
-        }
-        else
-        {
-            $replacements[1] = 'Home';
-        }
-        
+        $replacements[1]  = Common::getPageTitle();
+
         $patterns[2] = '/PAGE_URL/';
         if (is_home() == false)
         {
@@ -45,7 +38,7 @@ class Client_Instrumentation
         {
             $replacements[2] = 'window.location.origin + "/'.rawurlencode(get_the_title()).'"';
         }
-        
+
         echo preg_replace($patterns, $replacements, $rawSnippet);
     }
 }
