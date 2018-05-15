@@ -10,6 +10,10 @@
     <StartupFile>
     </StartupFile>
     <AssemblyName>ApplicationInsights.WordPress</AssemblyName>
+    <SaveServerSettingsInUserFile>false</SaveServerSettingsInUserFile>
+    <Runtime>PHP</Runtime>
+    <RuntimeVersion>7.0</RuntimeVersion>
+    <EnvName>CLI</EnvName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <IncludeDebugInformation>true</IncludeDebugInformation>
@@ -19,75 +23,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="vendor\" />
-    <Folder Include="vendor\composer\" />
-    <Folder Include="vendor\microsoft\" />
-    <Folder Include="vendor\microsoft\application-insights\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Channel\" />
-    <Folder Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Channel\Contracts\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationInsightsPlugin.php" />
     <Compile Include="src\Client_Instrumentation.php" />
+    <Compile Include="src\Common.php" />
     <Compile Include="src\Server_Instrumentation.php" />
     <Compile Include="src\Settings.php" />
-    <Compile Include="vendor\autoload.php" />
-    <Compile Include="vendor\composer\autoload_classmap.php" />
-    <Compile Include="vendor\composer\autoload_files.php" />
-    <Compile Include="vendor\composer\autoload_namespaces.php" />
-    <Compile Include="vendor\composer\autoload_psr4.php" />
-    <Compile Include="vendor\composer\autoload_real.php" />
-    <Compile Include="vendor\composer\ClassLoader.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Application.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Data_Point.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Data_Point_Type.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Device.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Envelope.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Event_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Exception_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Exception_Details.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Internal.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Location.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Message_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Metric_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Operation.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Page_View_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Request_Data.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Session.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Stack_Frame.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\User.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Contracts\Utils.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Channel\Telemetry_Channel.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Current_Session.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Current_User.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Telemetry_Client.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Telemetry_Context.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Bootstrap.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Channel\Contracts\Utils_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Channel\Telemetry_Channel_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Current_Session_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Current_User_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Telemetry_Client_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Telemetry_Context_Test.php" />
-    <Compile Include="vendor\microsoft\application-insights\ApplicationInsights\Tests\Utils.php" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="composer.json" />
     <Content Include="LICENSE" />
     <Content Include="readme.txt" />
-    <Content Include="vendor\composer\installed.json" />
-    <Content Include="vendor\microsoft\application-insights\.gitattributes" />
-    <Content Include="vendor\microsoft\application-insights\.gitignore" />
-    <Content Include="vendor\microsoft\application-insights\Application.Insights.phpproj" />
-    <Content Include="vendor\microsoft\application-insights\composer.json" />
-    <Content Include="vendor\microsoft\application-insights\LICENSE.txt" />
-    <Content Include="vendor\microsoft\application-insights\phpdoc.xml" />
-    <Content Include="vendor\microsoft\application-insights\phpunit.xml" />
-    <Content Include="vendor\microsoft\application-insights\README.md" />
   </ItemGroup>
 </Project>
