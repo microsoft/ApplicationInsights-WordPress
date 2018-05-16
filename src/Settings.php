@@ -43,12 +43,13 @@ class Settings {
         </div>
 <?php
     }
-    
+
     public function pageInitialization()
-    {        
+    {
         register_setting('applicationinsights_option_group', 'applicationinsights_options');
-        add_settings_section('main_section', 'Application Settings', null, 'applicationinsights-setting-admin');  
-        add_settings_field('instrumentation_key', 'Instrumentation Key', array( $this, 'instrumentationKeyCallback' ), 'applicationinsights-setting-admin', 'main_section');      
+        add_settings_section('main_section', 'Application Settings', null, 'applicationinsights-setting-admin');
+        add_settings_field('instrumentation_key', 'Instrumentation Key', array( $this, 'instrumentationKeyCallback' ), 'applicationinsights-setting-admin', 'main_section');
+        add_settings_field('track_404', 'Track 404?', array( $this, 'track404Callback' ), 'applicationinsights-setting-admin', 'main_section');
     }
 
     public function instrumentationKeyCallback()
@@ -56,6 +57,15 @@ class Settings {
         printf(
             '<input style="width: 450px" type="text" id="instrumentation_key" name="applicationinsights_options[instrumentation_key]" value="%s" />',
             isset( $this->options['instrumentation_key'] ) ? esc_attr( $this->options['instrumentation_key']) : ''
+        );
+    }
+
+    public function track404Callback() {
+        $checked = ($this->options['track_404'] == '1')?'checked':'';
+
+        printf(
+            '<input style="" type="checkbox" id="track_404" name="applicationinsights_options[track_404]" value="1" %s />',
+            $checked
         );
     }
 }

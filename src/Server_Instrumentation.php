@@ -7,12 +7,15 @@ namespace ApplicationInsights\WordPress;
 class Server_Instrumentation {
 	private $_telemetryClient;
 	private static $UNTRACKABLE_404;
+    private $_isTrack404Enabled;
 
 	public function __construct() {
 
 		$application_insights_options = get_option( "applicationinsights_options" );
 		$this->_telemetryClient       = new \ApplicationInsights\Telemetry_Client();
 		$this->_telemetryClient->getContext()->setInstrumentationKey( $application_insights_options["instrumentation_key"] );
+
+        $this->_isTrack404Enabled = ($application_insights_options['track_404'] == '1');
 
 		set_exception_handler( array( $this, 'exceptionHandler' ) );
 	}
@@ -30,9 +33,18 @@ class Server_Instrumentation {
 		}
 	}
 
-
-	function exceptionHandler( \Exception $exception ) {
+	/**
+	 * Handles PHP Exceptions
+	 * @param \Exception|\Throwable $exception Exception Information
+	 * @throws \InvalidArgumentException
+	 */
+	function exceptionHandler( $exception ) {
 		if ( $exception != null ) {
+            // Sanity Check
+            if (!($exception instanceof \Exception) && !($exception instanceof \Throwable)) {
+                throw new \InvalidArgumentException('$exception is an instance of an unexpected class ['.get_class($exception).'] only \Exception or \Throwable allowed.');
+            }
+
 			$this->_telemetryClient->trackException( $exception );
 			$this->_telemetryClient->flush();
 		}
@@ -41,7 +53,7 @@ class Server_Instrumentation {
 	function isTrackable404() {
 		$return = false;
 
-		if ( is_404() ) {
+		if ( $this->_isTrack404Enabled && is_404() ) {
 			$return = ! in_array( $_SERVER['REQUEST_URI'], $this->getUntrackableFiles() );
 		}
 
