@@ -9,7 +9,7 @@ class Settings {
     
     public function __construct()
     {
-         /* Necessary check for Multisite instalation */
+         /* Necessary check for mult-isite installation */
         if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
             require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
         }   

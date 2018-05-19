@@ -19,9 +19,10 @@ Other SDKs and documentation can be found [here](https://github.com/Microsoft/Ap
 
 ## Installation
 
-1. Upload all files to the '/wp-content/plugins/' directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to Settings -> Application Insights and enter the Instrumentation Key you received from http://portal.azure.com.
+1. Run `compose install`
+2. Upload all files to the '/wp-content/plugins/' directory.
+3. Activate the plugin through the 'Plugins' menu in WordPress.
+4. Go to Settings -> Application Insights and enter the Instrumentation Key you received from http://portal.azure.com.
 
 ## Changelog
 
