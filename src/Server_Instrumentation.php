@@ -10,7 +10,16 @@ class Server_Instrumentation
 
     public function __construct()
     {
-        $application_insights_options = get_option("applicationinsights_options");
+         /* Necessary check for Multisite instalation */
+        if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+            require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+        }   
+        if ( is_multisite() && is_plugin_active_for_network("application-insights/ApplicationInsightsPlugin.php") ) 
+        {
+            $application_insights_options = get_site_option("applicationinsights_options");
+        } else {
+            $application_insights_options = get_option("applicationinsights_options");
+        } 
         $this->_telemetryClient = new \ApplicationInsights\Telemetry_Client();
         $this->_telemetryClient->getContext()->setInstrumentationKey($application_insights_options["instrumentation_key"]);
 
