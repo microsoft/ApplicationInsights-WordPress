@@ -24,6 +24,10 @@ Other SDKs and documentation can be found [here](https://github.com/Microsoft/Ap
 3. Go to Settings -> Application Insights and enter the Instrumentation Key you received from http://portal.azure.com.
 
 ## Changelog
+
+### 2.3 
+* Added support for Wordpress Multisite Network.
+
 ### 2.2
 * Updated to the latest version of the Application Insights PHP SDK.
 
