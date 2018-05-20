@@ -11,13 +11,15 @@ If you're interested in contributing, take a look at the general [contributor's 
     a. Activate the plugin through the 'Plugins' menu in WordPress.
     b. Go to Settings -> Application Insights and enter the Instrumentation Key you received from http://portal.azure.com. Use direct link https://ms.portal.azure.com/#create/Microsoft.AppInsights to create a new Application Insights resource
 
+## Changelog
 
+Please include changelog update with every pull request. Changelog is tracked in [README.txt](README.txt).
 
 ## Shutdown and cleanup
+
 The command `docker-compose down` removes the containers and default network, but preserves your WordPress database.
 
 The command `docker-compose down --volumes` removes the containers, default network, and the WordPress database.
-
 
 ## Contributing
 
