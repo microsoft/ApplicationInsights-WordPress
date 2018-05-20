@@ -5,7 +5,7 @@ Tags: Application Insights, monitoring, tracing, telemetry
 Stable Tag: trunk
 Requires at least: 3.0.1
 Requires PHP: 5.2.4
-Tested up to: 4.3
+Tested up to: 4.9.6
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
