@@ -11,6 +11,13 @@ If you're interested in contributing, take a look at the general [contributor's 
     a. Activate the plugin through the 'Plugins' menu in WordPress.
     b. Go to Settings -> Application Insights and enter the Instrumentation Key you received from http://portal.azure.com. Use direct link https://ms.portal.azure.com/#create/Microsoft.AppInsights to create a new Application Insights resource
 
+## Development alongside the PHP SDK
+
+1. Replace `"microsoft/application-insights": ">=0.4.2"` with `"microsoft/application-insights": "@dev"`.
+2. Ensure that path in `"url": "../php"` points to the root of Application Insights PHP SDK.
+3. Run `composer update` after every change you want to take from PHP SDK repository.
+    **Note:** mirroring is set for wordpress running in docker being able to pick up files correctly.
+
 ## Changelog
 
 Please include changelog update with every pull request. Changelog is tracked in [README.txt](README.txt).

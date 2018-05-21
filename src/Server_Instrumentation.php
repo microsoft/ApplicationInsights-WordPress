@@ -10,7 +10,7 @@ class Server_Instrumentation
 
     public function __construct()
     {
-         /* Necessary check for Multisite instalation */
+         /* Necessary check for multi-site installation */
         if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
             require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
         }   
@@ -22,6 +22,8 @@ class Server_Instrumentation
         } 
         $this->_telemetryClient = new \ApplicationInsights\Telemetry_Client();
         $this->_telemetryClient->getContext()->setInstrumentationKey($application_insights_options["instrumentation_key"]);
+        $sdkVer = $this->_telemetryClient->getContext()->getInternalContext()->getSdkVersion();
+        $this->_telemetryClient->getContext()->getInternalContext()->setSdkVersion('wp_' . $sdkVer);
 
         set_exception_handler(array($this, 'exceptionHandler'));
     }
