@@ -14,7 +14,7 @@ class Client_Instrumentation
                 instrumentationKey:"INSTRUMENTATION_KEY"
             });
             
-            window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView("PAGE_NAME", PAGE_URL);
+            window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView(PAGE_NAME, PAGE_URL);
         </script>';
         
         $patterns = array();
