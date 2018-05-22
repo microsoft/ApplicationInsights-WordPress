@@ -13,9 +13,21 @@ If you're interested in contributing, take a look at the general [contributor's 
 
 ## Development alongside the PHP SDK
 
-1. Replace `"microsoft/application-insights": ">=0.4.2"` with `"microsoft/application-insights": "@dev"`.
-2. Ensure that path in `"url": "../php"` points to the root of Application Insights PHP SDK.
-3. Run `composer update` after every change you want to take from PHP SDK repository.
+1. Replace `"microsoft/application-insights": ">=0.4.2"` with `"microsoft/application-insights": "@dev"` in `composer.json`.
+2. Add to `composer.json`:
+    ``` json
+        "repositories": {
+        "dev-package": {
+          "type": "path",
+          "url": "../php",
+          "options": {
+            "symlink": false
+          }
+        }
+      }
+    ```
+3. Ensure that path in `"url": "../php"` points to the root of Application Insights PHP SDK.
+4. Run `composer update` after every change you want to take from PHP SDK repository.
     **Note:** mirroring is set for wordpress running in docker being able to pick up files correctly.
 
 ## Changelog

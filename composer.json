@@ -8,15 +8,5 @@
         "psr-4": {
             "ApplicationInsights\\WordPress\\": "src/"
         }
-    },
-
-    "repositories": {
-        "dev-package": {
-          "type": "path",
-          "url": "../php",
-          "options": {
-            "symlink": false
-          }
-        }
-      }
+    }
 }
