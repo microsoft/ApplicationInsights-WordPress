@@ -35,7 +35,7 @@ class Server_Instrumentation
             $url = $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             $requestName = Common::getPageTitle();
             $startTime = $_SERVER["REQUEST_TIME"];
-            $duration = timer_stop(0, 3) * 1000;
+            $duration = floatval(timer_stop(0, 3)) * 1000;
             $this->_telemetryClient->trackRequest($requestName, $url, $startTime, $duration, http_response_code(), !is_404());
 
             // Flush all telemetry items
