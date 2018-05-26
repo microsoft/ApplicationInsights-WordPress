@@ -4,7 +4,7 @@ If you're interested in contributing, take a look at the general [contributor's 
 
 ## Build and Test locally
 
-1. Run `compose install` to install all dependencies.
+1. Run `composer install` to install all dependencies.
 2. Change to docker directory: `cd docker`
 3. Run `docker-compose up -d`. This step assumes you have docker installed and configured.
 4. Configure WordPress and Application Insights plugin at http://localhost:8000
@@ -39,6 +39,26 @@ Please include changelog update with every pull request. Changelog is tracked in
 The command `docker-compose down` removes the containers and default network, but preserves your WordPress database.
 
 The command `docker-compose down --volumes` removes the containers, default network, and the WordPress database.
+
+## How to release a new version
+
+This is a section for maintainers.
+
+See instructions here: https://developer.wordpress.org/plugins/wordpress-org/how-to-use-subversion/
+
+```
+svn co https://plugins.svn.wordpress.org/application-insights application-insights
+cd application-insights/
+rm -rf trunk/
+mkdir trunk
+cp -r ../../wordpress/ trunk/
+cd trunk/
+rm -rf .gitignore 
+rm -rf .gitattributes
+rm -rf .git
+svn add trunk/*
+svn ci -m "updated to the latest version" --username ApplicationInsights --password ""
+```
 
 ## Contributing
 
