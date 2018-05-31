@@ -60,7 +60,7 @@ class Settings {
         $this->options = get_option( 'applicationinsights_options' );
         ?>
             <div class="wrap">
-                <?php echo _e('Application Insights Settings', 'applicationinsights'); ?>           
+                <h1><?php echo _e('Application Insights Settings', 'applicationinsights'); ?></h1>
                 <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields

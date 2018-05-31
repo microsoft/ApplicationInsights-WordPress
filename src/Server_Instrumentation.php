@@ -23,6 +23,7 @@ class Server_Instrumentation {
         } 
         $this->_telemetryClient = new \ApplicationInsights\Telemetry_Client();
         $this->_telemetryClient->getContext()->setInstrumentationKey($application_insights_options["instrumentation_key"]);
+        $this->_isTrack404Enabled = ($application_insights_options['track_404'] == '1');
         $sdkVer = $this->_telemetryClient->getContext()->getInternalContext()->getSdkVersion();
         $this->_telemetryClient->getContext()->getInternalContext()->setSdkVersion('wp_' . $sdkVer);
 
