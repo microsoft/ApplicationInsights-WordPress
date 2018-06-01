@@ -101,12 +101,13 @@ class Settings {
         add_settings_section('main_section', 'Application Settings', null, 'applicationinsights-setting-admin');
         add_settings_field('instrumentation_key', 'Instrumentation Key', array( $this, 'instrumentationKeyCallback' ), 'applicationinsights-setting-admin', 'main_section');
         add_settings_field('track_404', 'Track 404?', array( $this, 'track404Callback' ), 'applicationinsights-setting-admin', 'main_section');
+        add_settings_field('track_404_exceptions', 'Do not track 404 for these files (one per line)', array( $this, 'track404ExceptionsCallback' ), 'applicationinsights-setting-admin', 'main_section');
     }
 
     public function instrumentationKeyCallback()
     {
         printf(
-            '<input style="width: 450px" type="text" id="instrumentation_key" name="applicationinsights_options[instrumentation_key]" value="%s" />',
+            '<input class=\'regular-text\' type="text" id="instrumentation_key" name="applicationinsights_options[instrumentation_key]" value="%s" />',
             isset( $this->options['instrumentation_key'] ) ? esc_attr( $this->options['instrumentation_key'] ) : ''
         );
     }
@@ -148,7 +149,7 @@ class Settings {
                 delete_site_option($option);
             }
         }
-        
+
         // At last we redirect back to our options page.
         wp_redirect(add_query_arg(array('page' => 'applicationinsights-setting-admin',
             'updated' => 'true'), network_admin_url('settings.php')));
@@ -159,8 +160,15 @@ class Settings {
         $checked = ($this->options['track_404'] == '1')?'checked':'';
 
         printf(
-            '<input style="" type="checkbox" id="track_404" name="applicationinsights_options[track_404]" value="1" %s />',
+            '<input type="checkbox" id="track_404" name="applicationinsights_options[track_404]" value="1" %s />',
             $checked
+        );
+    }
+
+    public function track404ExceptionsCallback() {
+        printf(
+            '<textarea class=\'regular-text\' rows=\'20\' id="track_404_exceptions" name="applicationinsights_options[track_404_exceptions]">%s</textarea>',
+            $this->options['track_404_exceptions']
         );
     }
 }

@@ -45,7 +45,7 @@ class Server_Instrumentation {
 		}
 	}
 
-    function exceptionHandler(\Exception $exception)
+    function exceptionHandler($exception)
     {
         if ($exception != NULL)
         {
