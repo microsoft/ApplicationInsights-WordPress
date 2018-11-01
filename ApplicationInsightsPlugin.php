@@ -7,7 +7,7 @@ Author: ApplicationInsights
 License:  MIT
  */
 
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 // Enables Admin configuration experience
 $mySettingsPage = new ApplicationInsights\WordPress\Settings();

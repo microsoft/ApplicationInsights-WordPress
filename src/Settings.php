@@ -98,10 +98,13 @@ class Settings {
     public function pageInitialization()
     {
         register_setting('applicationinsights_option_group', 'applicationinsights_options');
-        add_settings_section('main_section', 'Application Settings', null, 'applicationinsights-setting-admin');
+
+        add_settings_section('main_section', 'Common Settings', null, 'applicationinsights-setting-admin');
         add_settings_field('instrumentation_key', 'Instrumentation Key', array( $this, 'instrumentationKeyCallback' ), 'applicationinsights-setting-admin', 'main_section');
-        add_settings_field('track_404', 'Track 404?', array( $this, 'track404Callback' ), 'applicationinsights-setting-admin', 'main_section');
-        add_settings_field('track_404_exceptions', 'Do not track 404 for these files (one per line)', array( $this, 'track404ExceptionsCallback' ), 'applicationinsights-setting-admin', 'main_section');
+
+        add_settings_section('track_404_section', '404 Tracking', null, 'applicationinsights-setting-admin');
+        add_settings_field('track_404', 'Track 404?', array( $this, 'track404Callback' ), 'applicationinsights-setting-admin', 'track_404_section');
+        add_settings_field('track_404_exceptions', 'Do not track 404 for these files (one per line)', array( $this, 'track404ExceptionsCallback' ), 'applicationinsights-setting-admin', 'track_404_section');
     }
 
     public function instrumentationKeyCallback()
