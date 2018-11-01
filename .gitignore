@@ -161,3 +161,6 @@ $RECYCLE.BIN/
 .DS_Store
 /.cr
 /.vs
+
+# PHPStorm
+/.idea
