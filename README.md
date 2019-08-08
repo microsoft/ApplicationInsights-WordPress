@@ -1,4 +1,4 @@
-# Application Insights WordPress Plugin
+# [UNSUPPORTED] Application Insights WordPress Plugin
 
 Integrates a WordPress site with Azure Application Insights.
 
